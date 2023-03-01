@@ -1,51 +1,67 @@
 function setup() {
-    createCanvas(400, 400);
-  }
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
   
-  function draw() {
-    background(255);
-    stroke(0);
-    strokeWeight(2);
+  // Set the stroke and fill colors for the shapes
+  noStroke();
+  fill(30, 30, 30);
   
-    // Draw Batman's head
-    fill(0);
-    arc(width / 2, height / 2, 180, 200, PI, TWO_PI);
+  // Draw the outer shape of Batman's head
+  beginShape();
+  vertex(100, 150);
+  bezierVertex(100, 100, 200, 100, 200, 150);
+  bezierVertex(200, 200, 100, 200, 100, 150);
+  endShape();
   
-    // Draw Batman's ears
-    fill(0);
-    triangle(width / 2 - 50, height / 2 - 100, width / 2 - 20, height / 2 - 160, width / 2 + 10, height / 2 - 100);
-    triangle(width / 2 + 50, height / 2 - 100, width / 2 + 20, height / 2 - 160, width / 2 - 10, height / 2 - 100);
+  // Draw the ears
+  beginShape();
+  vertex(90, 120);
+  vertex(70, 80);
+  vertex(110, 90);
+  endShape(CLOSE);
   
-    // Draw Batman's mask
-    noStroke();
-    fill(255, 204, 0);
-    ellipse(width / 2, height / 2, 80, 70);
+  beginShape();
+  vertex(210, 90);
+  vertex(250, 80);
+  vertex(230, 120);
+  endShape(CLOSE);
   
-    // Draw Batman's eyes
-    fill(0);
-    ellipse(width / 2 - 20, height / 2 - 10, 20, 20);
-    ellipse(width / 2 + 20, height / 2 - 10, 20, 20);
+  // Draw the eyes
+  fill(255);
+  ellipse(135, 125, 20, 20);
+  ellipse(175, 125, 20, 20);
   
-    // Draw Batman's mouth
-    stroke(0);
-    strokeWeight(4);
-    noFill();
-    arc(width / 2, height / 2 + 30, 80, 50, 0, PI);
+  // Draw the mouth
+  noFill();
+  stroke(255);
+  strokeWeight(3);
+  arc(150, 175, 50, 40, 0, PI);
   
-    // Draw Batman's body
-    fill(0);
-    rect(width / 2 - 50, height / 2 + 60, 100, 70, 20);
+  // Draw the bat symbol
+  noStroke();
+  fill(255);
+  beginShape();
+  vertex(150, 175);
+  bezierVertex(120, 150, 110, 100, 150, 110);
+  bezierVertex(190, 100, 180, 150, 150, 175);
+  endShape();
   
-    // Draw Batman's arms
-    stroke(0);
-    strokeWeight(10);
-    line(width / 2 - 70, height / 2 + 80, width / 2 - 100, height / 2 + 130);
-    line(width / 2 + 70, height / 2 + 80, width / 2 + 100, height / 2 + 130);
+  beginShape();
+  vertex(150, 140);
+  vertex(140, 140);
+  vertex(135, 160);
+  vertex(150, 160);
+  vertex(150, 140);
+  endShape(CLOSE);
   
-    // Draw Batman's belt
-    stroke(255, 204, 0);
-    strokeWeight(4);
-    line(width / 2 - 20, height / 2 + 105, width / 2 + 20, height / 2 + 105);
-    rect(width / 2 - 20, height / 2 + 105, 40, 10);
-  }
-  
+  beginShape();
+  vertex(150, 140);
+  vertex(160, 140);
+  vertex(165, 160);
+  vertex(150, 160);
+  vertex(150, 140);
+  endShape(CLOSE);
+}
